@@ -111,9 +111,9 @@ describe('Booking Component', () => {
 
   it('should allow the user to enter shoe sizes for each player', () => {
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <Booking />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     const addShoeButton = screen.getByText('+');
@@ -127,9 +127,9 @@ describe('Booking Component', () => {
 
   it('should allow the user to change shoe sizes for each player', () => {
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <Booking />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     const addShoeButton = screen.getByText('+');
@@ -144,9 +144,9 @@ describe('Booking Component', () => {
 
   it('should allow the user to select shoe sizes for all players in the booking', () => {
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <Booking />
-      </BrowserRouter>
+      </MemoryRouter>
     );
 
     const addShoeButton = screen.getByText('+');
@@ -163,11 +163,10 @@ describe('Booking Component', () => {
 
     it('should allow the user to remove a shoe size field', () => {
       render(
-        <BrowserRouter>
+        <MemoryRouter>
           <Booking />
-        </BrowserRouter>
+        </MemoryRouter>
       );
-
       const addShoeButton = screen.getByText('+');
       fireEvent.click(addShoeButton);
       fireEvent.click(addShoeButton);
@@ -181,49 +180,4 @@ describe('Booking Component', () => {
       shoeSizeInputs = screen.getAllByLabelText(/shoe size/i);
       expect(shoeSizeInputs.length).toBe(1);
     });
-
-  // it('should complete the booking and display booking number and total amount', async () => {
-  //   render(
-  //     <BrowserRouter>
-  //       <Booking />
-  //     </BrowserRouter>
-  //   );
-
-  //   const dateInput = screen.getByLabelText(/date/i);
-  //   const timeInput = screen.getByLabelText(/time/i);
-  //   const playersInput = screen.getByLabelText(/number of awesome bowlers/i);
-  //   const lanesInput = screen.getByLabelText(/number of lanes/i);
-
-  //   fireEvent.change(dateInput, { target: { value: '2023-10-10' } });
-  //   fireEvent.change(timeInput, { target: { value: '18:00' } });
-  //   fireEvent.change(playersInput, { target: { value: '4' } });
-  //   fireEvent.change(lanesInput, { target: { value: '2' } });
-
-  //   const addShoeButton = screen.getByText('+');
-  //   for (let i = 0; i < 4; i++) {
-  //     fireEvent.click(addShoeButton);
-  //   }
-
-  //   const shoeSizeInputs = screen.getAllByLabelText(/shoe size/i);
-  //   const shoeSizes = ['42', '43', '42', '43'];
-
-  //   shoeSizes.forEach((size, index) => {
-  //     fireEvent.change(shoeSizeInputs[index], { target: { value: size } });
-  //   });
-
-  //   const submitButton = screen.getByText(/strIIIIIike!/i);
-  //   fireEvent.click(submitButton);
-
-  //   await waitFor(() => {
-  //     const bookingNumber = screen.getByText(/123456/i);
-  //     const totalAmount = screen.getByText(/total: 680 kr/i);
-  //     const playerCost = screen.getByText(/120 kr per person/i);
-  //     const laneCost = screen.getByText(/100 kr per bana/i);
-
-  //     expect(bookingNumber).toBeInTheDocument();
-  //     expect(totalAmount).toBeInTheDocument();
-  //     expect(playerCost).toBeInTheDocument();
-  //     expect(laneCost).toBeInTheDocument();
-  //   });
-  // });
 });
