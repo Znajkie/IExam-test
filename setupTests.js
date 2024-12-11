@@ -3,9 +3,6 @@ import { cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
 import { server } from './src/mocks/server';
 
-import { Response } from 'node-fetch';
-global.Response = Response;
-
 beforeAll(() => server.listen());
 afterEach(() => {
   cleanup();
