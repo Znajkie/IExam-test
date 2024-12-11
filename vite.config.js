@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-// import { configDefaults } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react({jsxRuntime: 'automatic'})],
   test: {
     environment: 'jsdom',
     globals: true,
@@ -12,7 +11,7 @@ export default defineConfig({
       '\\.(css|less|scss|sass)$': './__mocks__/styleMock.js',
     },
     coverage: {
-      provider: 'istanbul',
+      provider: 'v8',
       reporter: ['text', 'lcov'],
       statements: 80,
       branches: 80,
