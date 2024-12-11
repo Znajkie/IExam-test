@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/Navigation/Navigation.jsx</title>
+    <title>Code coverage report for src/components/Navigation/Navigation.jsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../prettify.css" />
-    <link rel="stylesheet" href="../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/Navigation</a> Navigation.jsx</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/components/Navigation</a> Navigation.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -89,21 +89,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">68x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">68x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import './Navigation.scss';
 import navicon from '../../assets/navicon.svg';
@@ -115,13 +115,13 @@ function Navigation() {
     const [showMenu, setShowMenu] = useState(false);
 &nbsp;
     return (
-        &lt;nav className={ `navigation ${ <span class="branch-0 cbranch-no" title="branch not covered" >showMenu ? 'show-menu' : '</span>' }` }&gt;
+        &lt;nav className={ `navigation ${ showMenu ? 'show-menu' : '' }` }&gt;
             &lt;img src={ navicon } alt="navigation icon" className='navigation__icon'
-            onClick={ <span class="fstat-no" title="function not covered" >() =&gt; { setShowMenu(!showMenu) }} /</span>&gt;
-            &lt;a href="#" className={ `navigation__link ${ <span class="branch-0 cbranch-no" title="branch not covered" >showMenu ? '' : '</span>hide' }` } 
-            onClick={ <span class="fstat-no" title="function not covered" >() =&gt; { navigate('/') }}&gt;B</span>ooking&lt;/a&gt;
-            &lt;a href="#" className={ `navigation__link ${ <span class="branch-0 cbranch-no" title="branch not covered" >showMenu ? '' : '</span>hide' }` } 
-            onClick={ <span class="fstat-no" title="function not covered" >() =&gt; { navigate('/confirmation') }}&gt;C</span>onfirmation&lt;/a&gt;
+            onClick={ () =&gt; { setShowMenu(!showMenu) }} /&gt;
+            &lt;a href="#" className={ `navigation__link ${ showMenu ? '' : 'hide' }` } 
+            onClick={ () =&gt; { navigate('/') }}&gt;Booking&lt;/a&gt;
+            &lt;a href="#" className={ `navigation__link ${ showMenu ? '' : 'hide' }` } 
+            onClick={ () =&gt; { navigate('/confirmation') }}&gt;Confirmation&lt;/a&gt;
         &lt;/nav&gt;
     )
 }
@@ -133,16 +133,16 @@ export default Navigation;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-11T11:49:23.135Z
+                at 2024-12-11T12:24:03.909Z
             </div>
-        <script src="../../prettify.js"></script>
+        <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../sorter.js"></script>
-        <script src="../../block-navigation.js"></script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
     </body>
 </html>
     
